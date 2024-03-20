@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="newElement" />
+    <input type="text" id="postion" />
+    <button onclick="handleAddElement()">Add element</button>
+
+    <script>
+      const handleAddElement = () => {
+        // let newElement;
+        let priceList = [20, 30, 40, 50, 30];
+        let valuedElement = document.getElementById("newElement").value;
+        let position = document.getElementById("postion").value;
+
+        let newElement = parseInt(valuedElement);
+
+        // Convert string in reverse form and so we checks in right side...
+        for (let i = priceList.length - 1; i >= 0; i--) {
+          // Move our element to right side one by one until
+          // the accual element position is not find...
+          if (i >= position) {
+            priceList[i + 1] = priceList[i];
+
+            // After finding our given position we add our element(newElement in this situation)...
+            if (i == position) {
+              priceList[i] = newElement;
+            }
+          }
+        }
+        // document.write(`${priceList} <br>`);
+        console.log(priceList);
+      };
+    </script>
+  </body>
+</html>

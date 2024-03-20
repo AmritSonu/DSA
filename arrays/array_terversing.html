@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA-array Terversing ....</title>
+  </head>
+  <body>
+    <h1>helo</h1>
+    <input type="input" id="checkArray" />
+    <button onclick="handleInput()">check</button>
+    <br style="margin-bottom: 5rem" />
+    <script>
+      // ARRAY TERVERSING...
+      let i;
+      let data = [43, 5, 3, 5, 43, 43, 33];
+      for (i = 0; i < data.length; i++) {
+        document.write(`Array ${i} ${data[i]} <br>`);
+      }
+
+      // ACCESSING...
+      const x = 1;
+      document.write(`Accessed Array : ${data[x]}`);
+
+      // DYNAMIC ASSECCING ...
+      function handleInput() {
+        let inputData = document.getElementById("checkArray").value;
+        console.log(typeof inputData);
+        if (
+          data.length > inputData &&
+          typeof parseInt(inputData) === "number" &&
+          inputData >= 0
+        ) {
+          alert(data[inputData]);
+        }
+        // The added condition `/[a-zA-Z]/.test(inputData)` checks if
+        // the input contains any English letters.
+        //  If it does, it displays the alert message "English words not allowed!".
+        else if (typeof inputData === "string" && /[a-zA-Z]/.test(inputData)) {
+          alert("letters not allowed!");
+        } else {
+          alert("Not valid this number!");
+        }
+      }
+
+      // //The parseInt function is used to convert a string value into a numerical value.
+      // In the given expression, typeof parseInt(inputData) === "number", the parseInt(inputData)
+      // part converts the string inputData into a number.
+
+      // Then, the typeof operator is used to get the type
+      // of the result of parseInt(inputData). If the result is of type "number",
+      // the expression typeof parseInt(inputData) === "number" will evaluate to true.
+
+      // So, the expression is checking if the parsed value of inputData is
+      //  a number and if it is, it will return true.
+    </script>
+  </body>
+</html>
