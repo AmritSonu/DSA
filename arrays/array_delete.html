@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Array</title>
+  </head>
+  <body>
+    <script>
+      let totalPrice = [20, 30, 40, 50, 60];
+      console.log("orignal", totalPrice);
+      const handleElementDelete = () => {
+        let position = document.getElementById("deleteInput").value;
+        position = parseInt(position);
+        for (let i = position; i < totalPrice.length; i++) {
+          totalPrice[i] = totalPrice[i + 1];
+        }
+        totalPrice.length = totalPrice.length - 1;
+        console.log("deleted one", totalPrice);
+      };
+    </script>
+    <div>
+      <input type="text" id="deleteInput" placeholder="Ender Delete postion " />
+      <button type="button" onclick="handleElementDelete()">delete</button>
+    </div>
+  </body>
+</html>
