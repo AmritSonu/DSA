@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Searching...</title>
+  </head>
+  <body>
+    <script>
+      function handleSearch() {
+        let show = document.getElementById("show");
+        let find = document.getElementById("searchdata").value;
+        find = parseInt(find);
+
+        let data = [30, 40, 50, 60, 70, 80, 40, 43, 44, 40];
+        for (let i = 1; i <= data.length; i++) {
+          if (data[i] === find) {
+            // console.log(i);
+            show.textContent = `Index of :${i}`;
+            break;
+          }
+        }
+      }
+    </script>
+    <h1>Array searching..</h1>
+    <div>
+      <input type="text" id="searchdata" />
+      <button type="button" onclick="handleSearch()">search</button>
+    </div>
+    <div>
+      <h1 id="show">Index of :</h1>
+    </div>
+  </body>
+</html>
